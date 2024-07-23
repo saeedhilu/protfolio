@@ -1,62 +1,40 @@
-// src/pages/Home.jsx
-import React from "react";
-import { motion } from "framer-motion";
-import Sidebar from "../components/Sidebar";
-import AboutCommon from "../common/AboutCommon";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import MyCarousel from "../common/Carousel";
-import IntroductionSection from "../home/IntroductionSection";
-import ThreeDAnimation from "../animations/ThreeDAnimation"; // Import the animation component
-import Profile from "../assets/Profile.png"
+import React from 'react';
+import { motion } from 'framer-motion';
+import image from '../assets/pimage.png';
+import SocialMediaIcons from '../layout/SocialMediaIcons';
+
 
 const Home = () => {
   const heading = "I am a Python Full Stack Developer";
-  const text = 
-    "Hi, I'm Saeed NM, a passionate and self-taught Full Stack Python Developer. I specialize in creating dynamic and efficient web applications. Explore my work and let’s connect to build something amazing.";
+  const text = "Hi, I'm Saeed NM, a passionate and self-taught Full Stack Python Developer. I specialize in creating dynamic and efficient web applications. Explore my work and let’s connect to build something amazing.";
 
   return (
-    <div className="relative flex flex-col gap-y-6 min-h-screen text-white overflow-hidden">
-      <Sidebar />
-
-      {/* Profile Section */}
-      <div className="pt-28 flex justify-center items-center">
+    <div id="home" className="relative flex flex-col min-h-screen text-white overflow-hidden">
+      <div className="flex flex-col md:flex-row-reverse items-center justify-center">
         <motion.div
-          className="relative flex items-center"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="flex-shrink-0 w-full md:w-1/2 h-auto flex items-center justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <div
-            className="w-96 h-96 mb-4 md:mb-0 md:mr-6 rounded-full shadow-slate-500 shadow-2xl overflow-hidden flex items-center justify-center"
-            
-          >
-            <img
-              src={Profile}
-              alt="Saeed NM"
-              className="w-full mt-5  h-full object-cover "
-            
-            />
+          <div className="w-3/4 md:w-full h-auto overflow-hidden flex items-center bg-gradient-to-r from-white to bg-custom-dark justify-center ">
+            <img src={image} alt="Saeed NM" className="bg-gradient-to-r from-gray-900 via-black to-gray-800 w-full h-full object-cover" />
           </div>
-          <div className="pl-8 text-left">
-            <h1 className="text-4xl font-bold">Hello! I’m Saeed NM</h1>
-            <p className="text-xl mt-2">Full Stack Python Developer</p>
+        </motion.div>
+        <motion.div
+          className="flex-shrink-0 w-full md:w-1/2 text-left p-8"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl font-bold mb-4">Hello! I’m Saeed NM</h1>
+          <h2 className="text-3xl font-bold mb-8">{heading}</h2>
+          <p className="text-white bg-opacity-75 text-2xl rounded-lg shadow-lg">{text}</p>
+          <div className="mt-4 flex  justify-end"> 
+            <SocialMediaIcons />
           </div>
         </motion.div>
       </div>
-
-      <div className="flex justify-center mt-8">
-        <AboutCommon heading={heading} text={text} />
-      </div>
-
-      <div className="p-6">
-        <MyCarousel />
-      </div>
-
-      {/* 3D Animation */}
-      {/* <div className="absolute bottom-0 right-0 w-1/4 h-1/4">
-        <ThreeDAnimation />
-      </div> */}
     </div>
   );
 };

@@ -1,28 +1,23 @@
-// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
-import 'typeface-public-sans';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ProjectPage from './pages/Project';
+import Resume from './pages/ResumeSection';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <Router>
-      <div className="flex">
-        <Sidebar />
-        <div className="flex-1 ">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects/*" element={<ProjectPage />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
+    <div className="flex flex-col sm:flex-row">
+      <Sidebar />
+      <div className="flex-1 pt-16 sm:pl-40"> 
+        <Home />
+        <About />
+        <Contact />
+        <ProjectPage />
+        <Resume />
       </div>
-    </Router>
+    </div>
   );
 }
 

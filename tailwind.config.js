@@ -17,7 +17,7 @@ export default {
       }, 
       boxShadow: {
         'custom-shadow': 'rgb(51,51,51)', 
-        'grshadow':'#321b56',
+        'grshadow':'#151619',
         'custom-shadow-light': '0 4px 8px rgba(255, 255, 255, 0.5)', 
         'custom-shadow-black': '0 4px 6px rgba(0, 0, 0, 0.5)', // Black shadow
         'custom-shadow-light-white': '0 0 8px rgba(255, 255, 255, 0.3)',
