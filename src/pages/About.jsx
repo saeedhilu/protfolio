@@ -16,13 +16,26 @@ const fadeInUp = {
   }
 };
 
+const fadeOutDown = {
+  hidden: { y: 0, opacity: 1 },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+    }
+  }
+};
+
 const About = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.2 });
 
   React.useEffect(() => {
     if (inView) {
       controls.start('show');
+    } else {
+      controls.start('exit');
     }
   }, [controls, inView]);
 
@@ -30,15 +43,17 @@ const About = () => {
     <section
       id="about"
       ref={ref}
-      className="p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center rounded-lg   shadow-lg"
+      className="  ml-10 flex flex-col md:flex-row items-center   rounded-lg "
     >
-      <div className="w-full md:w-1/3 mb-8 md:mb-0 md:mr-8">
+      <div className="w-full  mb-8 md:mb-0 md:mr-8 flex justify-center">
         <motion.img
           src={profileImage}
           alt="Saeed NM"
-          className="rounded-full w-full h-auto object-cover"
-          initial={{ opacity: 0, x: -50 }}
+          className=" object-cover"
+          variants={fadeInUp}
+          initial="hidden"
           animate={controls}
+          exit="exit"
           transition={{ duration: 1 }}
         />
       </div>
@@ -47,7 +62,8 @@ const About = () => {
           variants={fadeInUp}
           initial="hidden"
           animate={controls}
-          className="text-4xl font-bold mb-8 text-center md:text-left"
+          exit="exit"
+          className="text-4xl font-bold mb-8 text-center md:text-left text-white"
         >
           About Me
         </motion.h2>
@@ -55,24 +71,25 @@ const About = () => {
           variants={fadeInUp}
           initial="hidden"
           animate={controls}
-          className="text-white p-6 rounded-lg  shadow-lg"
+          exit="exit"
+          className="text-2xl pr-20"
         >
           <motion.p
             variants={fadeInUp}
             className="mb-4 text-lg"
           >
-            I am Saeed NM, a self-taught Python and React.js developer from Malappuram, Kerala. Despite my background in biology science during my plus two, I have transitioned my passion for technology into practical skills through several mini projects and a major project, Zoomzzz, a room booking website.
+            I am Saeed NM, a <span className="text-2xl text-red-300">self-taught</span> Python and React.js developer from Malappuram, Kerala. Despite my background in biology science during my plus two, I have transitioned my passion for technology into practical skills through several mini projects and a major project, Zoomzzz, a room booking website.
           </motion.p>
           <motion.p
             variants={fadeInUp}
-            className="mb-4 text-lg"
+            className="mb-4 text-xl"
           >
             I am driven by a keen interest in creating high-performing and visually appealing websites, and I have honed my problem-solving abilities and communication skills. I am eager to leverage my skills and enthusiasm to contribute to innovative and impactful web development projects.
           </motion.p>
           <motion.a
             href="#contact"
             variants={fadeInUp}
-            className=" text-white py-2 px-4 rounded bg-red-200 hover:bg-black transition duration-300 block text-center"
+            className="text-white py-2 px-4 rounded  hover: transition duration-300 block text-center"
           >
             Contact Me
           </motion.a>

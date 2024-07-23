@@ -11,7 +11,7 @@ const Sidebar = () => (
     }
   } className="fixed inset-x-0 bottom-0 sm:bottom-auto   sm:ml-20 sm:left-0 sm:top-20 w-full sm:w-14 h-16  sm:h-[260px] bg-gray-800 text-white flex sm:flex-col items-center sm:items-start py-2  bg-gradient-to-tr from-gray-800 to-zinc-800 sm:rounded-full    z-50">
     <nav className="flex flex-row sm:flex-col   items-center justify-around sm:justify-start space-x-4 sm:space-x-1  mt-2  relative">
-      <NavLink to="home" icon={<FaHome />} />
+      <NavLink to="home"  icon={<FaHome />} />
       <NavLink to="about" icon={<FaUser />} />
       <NavLink to="projects" icon={<FaProjectDiagram />} />
       <NavLink to="contact" icon={<FaEnvelope />} />
@@ -24,7 +24,7 @@ const NavLink = ({ to, icon }) => (
   <ScrollLink
     to={to}
     smooth={true}
-    duration={500}
+    duration={1000}
     spy={true}
     exact="true"
     className="relative flex  flex-col items-center p-2 rounded-full h-12 w-12  transition-all duration-700 hover:bg-slate-500 hover:bg-opacity-5 cursor-pointer"
