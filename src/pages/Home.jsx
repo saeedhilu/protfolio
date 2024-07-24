@@ -18,7 +18,7 @@ const Home = () => {
           transition={{ duration: 1 }}
         >
           <div className="w-3/4 md:w-full h-auto overflow-hidden flex items-center bg-gradient-to-r from-white to bg-custom-dark justify-center ">
-            <img src={image} alt="Saeed NM" className="bg-gradient-to-r from-gray-900 via-black to-gray-800 w-full h-full object-cover" />
+            <img src={image}  alt="Saeed NM" className="bg-gradient-to-r from-gray-900 via-black to-gray-800 w-full h-full object-cover" />
           </div>
         </motion.div>
         <motion.div
