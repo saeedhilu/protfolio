@@ -1,10 +1,10 @@
 // src/components/AnimatedButton.jsx
 import App from "../animations/button/App";
 
-export default function AnimatedButton() {
+export default function AnimatedButton({text}) {
   return (
     <div>
-      <App />
+      <App text={text}/>
     </div>
   );
 }

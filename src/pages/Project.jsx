@@ -1,5 +1,7 @@
+// src/pages/ProjectPage.jsx
 import React from 'react';
-import rooomimage from '../assets/RoomImage.png'; // Ensure this path is correct
+import ProjectCard from '../components/ProjectCard';
+import roomImage from '../assets/RoomImage.png';
 
 const projects = [
   {
@@ -11,7 +13,7 @@ const projects = [
         <a href="https://zoomzzz.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: rooomimage, // Direct use of imported image
+    image: roomImage, // Direct use of imported image
   },
   {
     name: 'Kanban Drag and Drop',
@@ -22,7 +24,7 @@ const projects = [
         <a href="https://kanban.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300', 
+    image: 'https://via.placeholder.com/400x300',
   },
   {
     name: 'Seminar Hall Booking',
@@ -33,7 +35,7 @@ const projects = [
         <a href="https://seminarhallbooking.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300', 
+    image: 'https://via.placeholder.com/400x300',
   },
   {
     name: 'Pexel Image Downloading App',
@@ -44,25 +46,13 @@ const projects = [
         <a href="https://pexelimageapp.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300', 
+    image: 'https://via.placeholder.com/400x300',
   },
 ];
 
-const ProjectCard = ({ project, index }) => (
-  <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} mb-8`}>
-    <div className="md:w-1/2">
-      <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-lg shadow-lg" />
-    </div>
-    <div className="md:w-1/2 md:px-8 flex flex-col justify-center">
-      <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-      <div className="text-lg">{project.description}</div>
-    </div>
-  </div>
-);
-
 const ProjectPage = () => {
   return (
-    <section id="projects" className="p-8 bg-gray-900 text-white">
+    <section id="projects" className="p-8 text-white">
       <h2 className="text-3xl font-bold mb-8">Projects</h2>
       {projects.map((project, index) => (
         <ProjectCard key={index} project={project} index={index} />

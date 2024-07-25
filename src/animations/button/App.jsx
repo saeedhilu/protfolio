@@ -7,7 +7,8 @@ import { Shapes } from "./Shapes";
 import { transition } from "./settings";
 import useMeasure from "react-use-measure";
 
-export default function App() {
+export default function App({text}) {
+  console.log('from app',text);
   const [ref, bounds] = useMeasure({ scroll: false });
   const [isHover, setIsHover] = useState(false);
   const [isPress, setIsPress] = useState(false);

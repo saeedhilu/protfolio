@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-dark': '#11071f',
+        'custom-dark': '#010917',
         'custom-hash': 'rgb(21, 22, 23)',
         'nav-btn':'#17171b',
         'nav-btn-hover':'#2e2f32',

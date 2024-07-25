@@ -38,7 +38,7 @@ const Resume = () => {
           </p>
           <div className="flex space-x-20">
             <div onClick={openModal}>
-              <AnimatedButton />
+              <AnimatedButton text="view cv" />
             </div>
            
             <a
