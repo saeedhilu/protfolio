@@ -10,6 +10,7 @@ const Home = () => {
 
   return (
     <div id="home" className="relative flex flex-col min-h-screen text-white overflow-hidden">
+      
       <div className="flex flex-col md:flex-row-reverse items-center justify-center">
         <motion.div
           className="flex-shrink-0 w-full md:w-1/2 h-auto flex items-center justify-center"

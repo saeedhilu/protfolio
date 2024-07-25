@@ -13,6 +13,9 @@ const Resume = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const handle = () => {
+    console.log("hello");
+  };
 
   return (
     <section
@@ -30,9 +33,23 @@ const Resume = () => {
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <p className="text-lg mb-4">
             Here is a brief overview of my professional background and
-            experience. Click on "View CV" to see the full version or
-            "Download Resume" to get a copy.
+            experience. Click on "View CV" to see the full version or "Download
+            Resume" to get a copy.
           </p>
+          <div className="flex space-x-20">
+            <div onClick={openModal}>
+              <AnimatedButton />
+            </div>
+           
+            <a
+              href="/resume.pdf"
+              download
+              className="bg-blue-600 text-white py-2  px-6 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
+            >
+              <FaDownload className="text-lg" />
+              <span>Download Resume</span>
+            </a>
+          </div>
         </div>
 
         {/* Resume Thumbnail and Buttons */}
@@ -43,26 +60,8 @@ const Resume = () => {
             className="w-96 md:w-96 object-cover h-auto rounded-lg shadow-lg cursor-pointer"
             onClick={openModal}
           />
-          <div className="flex space-x-4">
-            <button
-              onClick={openModal}
-              className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-            >
-              <FaEye className="text-lg" />
-              <span>View CV</span>
-            </button>
-            <a
-              href="/resume.pdf"
-              download
-              className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition duration-300 flex items-center space-x-2"
-            >
-              <FaDownload className="text-lg" />
-              <span>Download Resume</span>
-            </a>
-          </div>
         </div>
       </div>
-      <AnimatedButton/>
 
       {/* Modal for Full Resume View */}
       {isModalOpen && (
