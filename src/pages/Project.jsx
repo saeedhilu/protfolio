@@ -2,6 +2,8 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import roomImage from '../assets/RoomImage.png';
+import seminar from '../assets/seminar.png';
+import pexel from '../assets/pexel.png';
 
 const projects = [
   {
@@ -24,7 +26,7 @@ const projects = [
         <a href="https://kanban.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300',
+    image: 'https://blog.logrocket.com/wp-content/uploads/2020/12/in-progress-kanban-board.png',
   },
   {
     name: 'Seminar Hall Booking',
@@ -35,7 +37,7 @@ const projects = [
         <a href="https://seminarhallbooking.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300',
+    image: seminar,
   },
   {
     name: 'Pexel Image Downloading App',
@@ -46,7 +48,7 @@ const projects = [
         <a href="https://pexelimageapp.example.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Visit Website</a>
       </>
     ),
-    image: 'https://via.placeholder.com/400x300',
+    image: pexel,
   },
 ];
 

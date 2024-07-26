@@ -3,6 +3,9 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const ProjectCard = ({ project, index }) => {
+  console.log('====================================');
+  console.log(project.image);
+  console.log('====================================');
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 

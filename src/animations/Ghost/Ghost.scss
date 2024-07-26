@@ -1,0 +1,176 @@
+body {
+  overflow: auto;
+  // cursor: none; 
+  z-index: 20;
+
+  #speedcapture {
+    opacity: 0.25;
+  }
+
+  .ghost {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #5c0067 0%, #00d4ff 100%); // Updated background with radial gradient
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 0.5s ease, background 0.3s ease;
+    animation: swirl 6s ease-in-out infinite;
+    transform: translateX(-100px);
+    will-change: transform, background;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #5c0067 0%, #00d4ff 100%); // Updated bubble color with radial gradient
+      border-radius: 50%;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      animation: bubbling 2s linear infinite;
+      filter: blur(1px);
+
+      @keyframes bubbling {
+        0% {
+          box-shadow: 50px 150px 0 rgba(12, 65, 126, 0.5);
+        }
+        50% {
+          box-shadow: -100px 0px 0 rgba(12, 65, 126, 0.5);
+        }
+        100% {
+          box-shadow: 50px -150px 0 rgba(12, 65, 126, 0.5);
+        }
+      }
+    }
+
+    &.face {
+      .arms {
+        width: 120px;
+        height: 30px;
+        position: absolute;
+        left: -10px;
+        top: 45px;
+        z-index: -1;
+        border-radius: 50px;
+
+        .arm {
+          content: '';
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          border-radius: 100px 0 0 0;
+          border-top: 15px solid #1354d6;
+          border-left: 15px solid #1354d6;
+          animation: wave 2s ease-in-out infinite alternate;
+          transform-origin: top right;
+          transform: rotate(20deg);
+          opacity: 0.5;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #1354d6;
+            bottom: -5px;
+            left: -15px;
+            border-radius: 100%;
+          }
+
+          @keyframes wave {
+            to {
+              transform: rotate(-20deg);
+            }
+          }
+
+          &:last-of-type {
+            left: auto;
+            right: 0;
+            transform-origin: top left;
+            border-radius: 0 100px 0 0;
+            border-top: 15px solid #1354d6;
+            border-right: 15px solid #1354d6;
+            border-left: none;
+
+            &:before {
+              left: auto;
+              right: -15px;
+            }
+          }
+        }
+      }
+
+      .inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: look1 4s ease-in-out infinite;
+        transform-style: preserve-3d;
+
+        @keyframes look1 {
+          0% {
+            transform: translateX(-20px) rotateY(-10deg);
+          }
+          25% {
+            transform: translateX(20px) rotateY(10deg);
+          }
+          75% {
+            transform: translateX(-20px) rotateY(-10deg);
+          }
+          100% {
+            transform: translateX(-20px) rotateY(-10deg);
+          }
+        }
+
+        .mouth {
+          position: absolute;
+          width: 20px;
+          height: 10px;
+          border-radius: 5px 5px 150px 150px;
+          bottom: 20px;
+          left: 40px;
+          border-bottom: 2px solid #000;
+          border-right: 2px solid #000;
+          border-left: 2px solid #000;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 7.5px;
+            height: 7.5px;
+            background: #000;
+            border-radius: 50%;
+            top: -25px;
+            left: -17.5px;
+            box-shadow: 45px 0 0 #000;
+          }
+        }
+      }
+    }
+
+    @keyframes swirl {
+      100% {
+        transform: translateX(100px);
+      }
+    }
+
+    @for $i from 1 through 30 {
+      &:nth-of-type(#{$i}) {
+        transition: transform #{$i / 20}s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        width: #{100 - ($i * 4)}px;
+        height: #{100 - ($i * 4)}px;
+        margin-left: calc(#{100 - ($i * 4)}px / -2);
+        margin-top: calc(#{100 - ($i * 4)}px / -2);
+        background: radial-gradient(circle, #5c0067 0%, #00d4ff 100%); // Use radial gradient for the ghost's background
+        z-index: #{20 - $i};
+        animation-delay: #{$i / 30}s;
+
+        &:before {
+          animation-delay: #{$i / random(10)}s;
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+}
