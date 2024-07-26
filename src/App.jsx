@@ -16,6 +16,7 @@ function App() {
     <div className="flex flex-col sm:flex-row">
       {/* <ParticlesBackground /> */}
       {/* <CursorTrail/> */}
+      
       <Ghost />
       <Sidebar />
       <div className="flex-1 pt-16 sm:pl-40 content">

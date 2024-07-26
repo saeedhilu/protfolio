@@ -20,7 +20,7 @@ const Resume = () => {
   return (
     <section
       id="resume"
-      className="p-8 max-w-6xl mx-auto text-white rounded-lg shadow-lg "
+      className="p-8 max-w-6xl mx-auto text-white rounded-lg  "
     >
       {/* Header Section */}
       <div className="mb-12 text-center md:text-left">

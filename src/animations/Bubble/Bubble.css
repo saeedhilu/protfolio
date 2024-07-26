@@ -1,0 +1,147 @@
+/* src/components/bubblesBackground.css */
+
+/* Ensure the body fills the viewport and hides scrollbars */
+body {
+  margin: 0;
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Container for the bubbles with the background color */
+.ocean {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #010917; /* Dark blue background color */
+}
+
+/* Style for individual bubbles */
+.bubble {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6); /* Light semi-transparent bubbles */
+  bottom: -30px;
+  opacity: 0.3;
+  animation: bubble-rise 15s ease-in-out infinite, side-ways 4s ease-in-out infinite alternate;
+}
+
+/* Keyframes for bubbles rising from bottom to top */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for bubbles moving side to side */
+@keyframes side-ways {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 200px;
+  }
+}
+
+/* Individual bubble styles with different sizes, positions, and animation delays */
+.bubble--1 {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0.5s;
+  animation-duration: 16s;
+}
+
+.bubble--2 {
+  left: 30%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 1s;
+  animation-duration: 12s;
+}
+
+.bubble--3 {
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 2s;
+  animation-duration: 20s;
+}
+
+.bubble--4 {
+  left: 70%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 3s;
+  animation-duration: 15s;
+}
+
+.bubble--5 {
+  left: 20%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 4s;
+  animation-duration: 18s;
+}
+
+.bubble--6 {
+  left: 80%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 5s;
+  animation-duration: 22s;
+}
+
+.bubble--7 {
+  left: 40%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 6s;
+  animation-duration: 17s;
+}
+
+.bubble--8 {
+  left: 60%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 7s;
+  animation-duration: 25s;
+}
+
+.bubble--9 {
+  left: 25%;
+  width: 35px;
+  height: 35px;
+  animation-delay: 8s;
+  animation-duration: 19s;
+}
+
+.bubble--10 {
+  left: 55%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 9s;
+  animation-duration: 16s;
+}
+
+.bubble--11 {
+  left: 75%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 10s;
+  animation-duration: 14s;
+}
+
+.bubble--12 {
+  left: 85%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 11s;
+  animation-duration: 20s;
+}

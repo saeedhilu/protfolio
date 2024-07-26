@@ -72,7 +72,7 @@ export default function App({text}) {
           variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
           className="label"
         >
-         View Resume
+         {text}
         </motion.div>
       </motion.button>
     </MotionConfig>
