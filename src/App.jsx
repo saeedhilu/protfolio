@@ -26,6 +26,7 @@ function App() {
 
         <ProjectPage />
         <Resume />
+        
         <Contact />
       </div>
     </div>

@@ -25,7 +25,7 @@ const Ghost = () => {
   }, []);
 
   return (
-    <div id="speedcapture">
+    <div id="speedcapture" className='z-50'>
       {[...Array(20)].map((_, index) => (
         <div key={index} className="ghost face" ref={(el) => (ghostRef.current[index] = el)}>
           <div className="arms">

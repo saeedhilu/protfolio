@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./index.html", // Ensure this path is correct for your main HTML file
+    "./src/**/*.{js,ts,jsx,tsx}", // Including all JS/TS and JSX/TSX files in the src folder
   ],
   theme: {
     extend: {
