@@ -4,7 +4,7 @@ export const portfolioData = {
     subheading: "Building scalable, high-concurrency SaaS platforms. Specializing in distributed architecture, data integrity, and performance optimization.",
     cta: [
       { label: "View Engineering Case Studies", href: "#case-studies", primary: true },
-      { label: "Download Resume", href: "/resume.pdf", primary: false }
+      { label: "Download Resume", href: "/Saeed_NM_Software_Engineer_CV.pdf", primary: false, download: true }
     ]
   },
   highlights: [
@@ -84,13 +84,109 @@ export const portfolioData = {
       outcome: "Built a responsive and efficient contactless interaction system with maintained low-latency communication."
     }
   ],
-  skills: {
-    backend: ["Python", "Django", "FastAPI", "Node.js", "REST/GraphQL APIs"],
-    data: ["PostgreSQL", "Database Indexing", "Query Optimization", "Redis", "Caching"],
-    distributed: ["Celery", "Message Queues", "Background Workers", "Idempotency"],
-    infrastructure: ["Multi-tenant Architecture", "Concurrency Control", "Transaction Management", "System Reliability"],
-    frontend: ["React", "Vite", "Tailwind CSS", "WebRTC"]
-  },
+  skills: [
+    {
+      category: "Backend Systems",
+      priority: 1,
+      items: [
+        "Python",
+        "Django",
+        "FastAPI",
+        "REST API Design",
+        "GraphQL APIs",
+        "Authentication & Authorization",
+        "Data Modeling & Schema Design"
+      ]
+    },
+    {
+      category: "Data & Storage",
+      priority: 2,
+      items: [
+        "PostgreSQL",
+        "Database Indexing",
+        "Query Optimization",
+        "Query Planning",
+        "Database Triggers (PostgreSQL)",
+        "Stored Procedures",
+        "Redis",
+        "Caching Strategies",
+        "Data Consistency",
+        "Large Dataset Handling"
+      ]
+    },
+    {
+      category: "Distributed & Async Systems",
+      priority: 3,
+      items: [
+        "Celery",
+        "Background Workers",
+        "Message Queues",
+        "Task Orchestration",
+        "Event-Driven Processing",
+        "Retry Mechanisms",
+        "Failure Handling",
+        "Idempotent Job Design"
+      ]
+    },
+    {
+      category: "Concurrency & Transaction Safety",
+      priority: 4,
+      highlight: true,
+      items: [
+        "Race Condition Handling",
+        "Transaction Management",
+        "Transaction Isolation",
+        "Atomic Operations",
+        "High-Concurrency Systems",
+        "Database Locking",
+        "Redis Locking",
+        "Idempotency"
+      ]
+    },
+    {
+      category: "Real-Time Systems",
+      priority: 5,
+      highlight: true,
+      items: [
+        "WebRTC",
+        "Real-Time Communication",
+        "Live Streaming Architecture",
+        "Low-Latency Systems",
+        "Session Management",
+        "Connection Lifecycle Handling"
+      ]
+    },
+    {
+      category: "Architecture & Scalability",
+      priority: 6,
+      items: [
+        "Multi-Tenant Architecture",
+        "System Design",
+        "Scalability Patterns",
+        "Performance Optimization",
+        "Fault Tolerance",
+        "System Reliability"
+      ]
+    },
+    {
+      category: "Frontend Engineering",
+      priority: 7,
+      items: [
+        "React",
+        "Component Architecture",
+        "State Management (Redux)",
+        "Server State Management (React Query)",
+        "Client Storage (IndexedDB, LocalStorage)",
+        "API Integration (Axios / Fetch)",
+        "Form Handling & Validation",
+        "Performance Optimization (Memoization, Lazy Loading)",
+        "Reusable UI Systems",
+        "Responsive Design",
+        "Vite",
+        "Tailwind CSS"
+      ]
+    }
+  ],
   certifications: [
     {
       title: "Python (Basic)",

@@ -3,14 +3,6 @@ import { motion } from 'framer-motion';
 import Container from '../layout/Container';
 import { portfolioData } from '../../data/portfolio';
 
-const categoryLabels = {
-  backend: "Backend Systems",
-  data: "Data & Storage",
-  distributed: "Distributed Systems",
-  infrastructure: "Infrastructure & DevOps",
-  frontend: "Frontend (Proficient)"
-};
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -29,6 +21,9 @@ const badgeVariants = {
 };
 
 const Skills = () => {
+  // Sort skills by priority to ensure correct order
+  const sortedSkills = [...portfolioData.skills].sort((a, b) => a.priority - b.priority);
+
   return (
     <section id="skills" className="py-24 overflow-hidden bg-white">
       <Container>
@@ -49,17 +44,21 @@ const Skills = () => {
           </motion.div>
           
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
-            {Object.entries(portfolioData.skills).map(([category, skills], idx) => (
+            {sortedSkills.map((skillGroup, idx) => (
               <motion.div 
-                key={category} 
+                key={skillGroup.category} 
                 className="space-y-4"
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-2">
-                  {categoryLabels[category]}
+                <h3 className={`text-sm font-bold uppercase tracking-wider pb-2 border-b ${
+                  skillGroup.highlight 
+                    ? 'text-indigo-600 border-indigo-200' 
+                    : 'text-slate-900 border-slate-200'
+                }`}>
+                  {skillGroup.category}
                 </h3>
                 <motion.div 
                   className="flex flex-wrap gap-2 pt-1"
@@ -68,12 +67,16 @@ const Skills = () => {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  {skills.map((skill, i) => (
+                  {skillGroup.items.map((skill, i) => (
                     <motion.span 
                       key={i}
                       variants={badgeVariants}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="px-3 py-1.5 text-sm font-medium rounded-md bg-white text-slate-800 border border-slate-200 shadow-sm cursor-default"
+                      className={`px-3 py-1.5 text-sm font-medium rounded-md shadow-sm cursor-default border ${
+                        skillGroup.highlight
+                          ? 'bg-indigo-50 text-indigo-700 border-indigo-100 hover:border-indigo-300'
+                          : 'bg-white text-slate-800 border-slate-200'
+                      }`}
                     >
                       {skill}
                     </motion.span>

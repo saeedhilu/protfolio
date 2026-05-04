@@ -52,6 +52,7 @@ const Hero = () => {
               <motion.a
                 key={idx}
                 href={link.href}
+                download={link.download ? true : undefined}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-50 ${

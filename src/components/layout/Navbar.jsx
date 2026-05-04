@@ -7,7 +7,7 @@ const Navbar = () => {
       <Container>
         <div className="flex items-center justify-between h-16">
           <div className="font-mono text-sm font-semibold tracking-tight text-slate-900">
-            Saeed Hilu
+            Saeed NM
           </div>
           <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
             <a href="#experience" className="hover:text-indigo-600 transition-colors">Experience</a>
