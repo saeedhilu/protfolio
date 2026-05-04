@@ -4,6 +4,7 @@ export default {
     "./index.html", // Ensure this path is correct for your main HTML file
     "./src/**/*.{js,ts,jsx,tsx}", // Including all JS/TS and JSX/TSX files in the src folder
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
