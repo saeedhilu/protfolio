@@ -18,11 +18,11 @@ const itemVariants = {
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="py-20 bg-slate-50 border-y border-slate-200 overflow-hidden">
+    <section id="certifications" className="pb-24 pt-10 bg-slate-50 border-b border-slate-200 overflow-hidden">
       <Container>
-        <div className="max-w-3xl">
+        <div className="max-w-4xl mx-auto">
           <motion.div 
-            className="space-y-4 mb-8"
+            className="space-y-4 mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}

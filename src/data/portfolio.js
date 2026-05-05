@@ -32,7 +32,24 @@ export const portfolioData = {
       company: "ViknBooks",
       period: "Year - Present",
       context: "Multi-tenant SaaS platform serving diverse business needs.",
-      architecture: ["Django", "FastAPI", "PostgreSQL", "Celery", "Redis"],
+      architecture: [
+        "Django", 
+        "REST APIs", 
+        "React", 
+        "Redux", 
+        "TanStack Query", 
+        "PostgreSQL", 
+        "Raw SQL Queries", 
+        "Database Triggers", 
+        "WebSockets", 
+        "Auth & Authorization", 
+        "Celery", 
+        "Redis", 
+        "AWS S3", 
+        "Postman", 
+        "API Documentation", 
+        "Git"
+      ],
       contributions: [
         "Architected a high-throughput voucher generation system, resolving race conditions through distributed locks and optimized database indexing.",
         "Integrated Celery and Redis for asynchronous background processing, reducing API response times.",
@@ -185,6 +202,45 @@ export const portfolioData = {
         "Vite",
         "Tailwind CSS"
       ]
+    }
+  ],
+  additionalProjects: [
+    {
+      id: "rasa-chatbot",
+      title: "Conversational AI System",
+      context: "Rasa Chatbot System",
+      contributions: [
+        "Built a conversational AI system using Rasa for complex dialog management.",
+        "Designed intent classification and dynamic response handling.",
+        "Integrated chatbot with backend services for real-time data retrieval and interactions."
+      ]
+    },
+    {
+      id: "zoomzzz",
+      title: "Room Booking Platform",
+      context: "Zoomzzz",
+      contributions: [
+        "Developed a booking system with comprehensive scheduling and availability management.",
+        "Handled concurrent booking scenarios and race condition conflict resolution.",
+        "Designed efficient booking workflows and rigorous data validation pipelines."
+      ]
+    }
+  ],
+  codingProfiles: [
+    {
+      platform: "LeetCode",
+      url: "https://leetcode.com/u/saeedhilu/",
+      description: "Consistent problem-solving and algorithmic practice."
+    },
+    {
+      platform: "Codewars",
+      url: "https://www.codewars.com/users/saeedhilu",
+      description: "Code kata and logic optimization."
+    },
+    {
+      platform: "MonkeyType",
+      url: "https://monkeytype.com/profile/Saeed-nm",
+      description: "Fast, accurate technical typing discipline."
     }
   ],
   certifications: [

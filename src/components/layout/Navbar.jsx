@@ -16,6 +16,14 @@ const Navbar = () => {
           </nav>
           <div className="flex items-center gap-4">
             <a 
+              href="https://www.linkedin.com/in/saeed-nm-62924b23a" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-slate-900 hover:text-indigo-600 transition-colors hidden sm:block"
+            >
+              LinkedIn
+            </a>
+            <a 
               href="mailto:contact@example.com" 
               className="text-sm font-medium text-slate-900 hover:text-indigo-600 transition-colors"
             >
